@@ -82,7 +82,7 @@ function getIcon(type: CoachNotificationType) {
 function getLink(type: CoachNotificationType) {
   if (type === "today" || type === "upcoming")
     return "/coach/schedule"
-  if (type === "assigned") return "/coach/courses"
+  if (type === "assigned") return "/coach"
   return null
 }
 
