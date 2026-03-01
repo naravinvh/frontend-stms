@@ -1,5 +1,6 @@
 "use client"
 
+import { attendanceHistory } from "@/data/attendance"
 import Link from "next/link"
 import {Home,Bell} from "lucide-react"
 import TodayClasses, {
@@ -17,6 +18,8 @@ export type EnrolledCourse = {
   endDate: string
   nextClassDate?: string
 }
+
+
 
 /* ================= MOCK DATA ================= */
 
@@ -37,22 +40,6 @@ const courses: EnrolledCourse[] = [
     attendedSessions: 4,
     startDate: "2026-02-01",
     endDate: "2026-03-01",
-  },
-]
-
-const attendanceHistory: Attendance[] = [
-  {
-    id: 9,
-    date: "2026-02-28",
-    time: "18:05",
-    course: "Badminton Beginner",
-    status: "present",
-  },
-  {
-    id: 10,
-    date: "2026-02-28",
-    course: "Swimming Technique",
-    status: "absent",
   },
 ]
 
@@ -126,8 +113,8 @@ export default function StudentDashboard() {
   </Link>
 </div>
 
-      {/* ===== TODAY CLASSES ===== */}
-<div className="space-y-3">
+{/* ===== TODAY CLASSES ===== */}
+<div className="space-y-2">
   <TodayClasses attendanceHistory={attendanceHistory} />
 </div>
 

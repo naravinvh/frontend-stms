@@ -1,5 +1,5 @@
 "use client"
-
+import { attendanceHistory } from "@/data/attendance"
 import { useMemo, useEffect, useState } from "react"
 import { CalendarCheck } from "lucide-react"
 /* ---------- TYPES ---------- */
@@ -12,23 +12,6 @@ type Attendance = {
   course: string
   status: AttendanceStatus
 }
-
-/* ---------- MOCK DATA ---------- */
-const attendanceHistory: Attendance[] = [
-  // 🏸 Badminton (perfect)
-  { id: 1, date: "2026-02-27", time: "17:58", course: "Badminton Beginner", status: "present" },
-  { id: 2, date: "2026-02-25", time: "18:02", course: "Badminton Beginner", status: "present" },
-  { id: 3, date: "2026-02-22", time: "17:55", course: "Badminton Beginner", status: "present" },
-
-  // ⚽ Football
-  { id: 4, date: "2026-02-27", course: "Advanced Football Training", status: "absent" },
-  { id: 5, date: "2026-02-24", time: "19:01", course: "Advanced Football Training", status: "present" },
-  { id: 6, date: "2026-02-21", course: "Advanced Football Training", status: "absent" },
-
-  // 🏊 Swimming
-  { id: 7, date: "2026-02-23", time: "16:58", course: "Swimming Technique", status: "present" },
-  { id: 8, date: "2026-02-20", course: "Swimming Technique", status: "absent" },
-]
 
 /* ---------- PAGE ---------- */
 export default function StudentAttendancePage() {
