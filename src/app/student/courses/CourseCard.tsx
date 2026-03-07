@@ -136,7 +136,7 @@ export default function CourseCard({
 
       {/* ===== Action ===== */}
       <Link
-        href={`/student/courses/${course.id}`}
+        href={`/student/payment/submit?courseId=${course.id}`}
         className="text-sm text-blue-600 hover:underline"
       >
         View details →
